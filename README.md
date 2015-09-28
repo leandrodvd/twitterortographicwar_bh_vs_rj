@@ -9,3 +9,8 @@ A nodejs app that receives HTTP POST requests containing a "time" atribute in se
 4. open a REST client and execute a post to localhost:3000/fight  with a json object in the body like {"time":10} and the header Content-Type:application/json. 
 
 Using {"time":10} in the body request will process tweets form bh and rj for the next 10 seconds and return a json response in the form of {'bh': n_errors_bh, 'rio':n_errors_rio, 'winner': winning_city } - Ex. {"bh":73,"rio":240,"winner":"bh"}.
+
+# Room for improvements
+There are lots of possible improvements to be done. In fact a full refactor is welcome.
+1. The biggest one is that, currently, the solution opens a new twitter stream for each new POST request. With this approach, if two simultaneous requests are received, two streams will be opened. This is a not a performatic solution and, depending on the usage, Twitter may block the stream requests. One possible better approach would be to open and keep a single stream when server is initialized, and emit an event for each tweet. Each post request would implement a sort of "collector" object that subscribes to those events t oexecute the count. The collector would exist only for the desired requested time interval.
+2. Another possible improvement (alligned with the previous) is that, currently, the spell check is executed only after all tweets are collected, this makes the response time too big. A better approach would be to do the spell check right after each tweet is received (and them emmit an event containing the tweet and the typos count)
