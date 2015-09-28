@@ -8,4 +8,4 @@ A nodejs app that receives HTTP POST requests containing a "time" atribute in se
 3. start the app with <code>node app.js</code> - it will initialize an http server on port 3000
 4. open a REST client and execute a post to localhost:3000/fight  with a json object in the body like {"time":10} and the header Content-Type:application/json. 
 
-This will process tweets form bh and rj for the next 10 seconds and return a json response in the form of {'bh': n_errors_bh, 'rio':n_errors_rio, 'winner': winning_city } - Ex. {"bh":73,"rio":240,"winner":"bh"}.
+Using {"time":10} in the body request will process tweets form bh and rj for the next 10 seconds and return a json response in the form of {'bh': n_errors_bh, 'rio':n_errors_rio, 'winner': winning_city } - Ex. {"bh":73,"rio":240,"winner":"bh"}.
