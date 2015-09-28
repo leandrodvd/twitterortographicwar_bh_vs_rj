@@ -19,5 +19,3 @@ There are lots of possible improvements to be done. In fact a full refactor is w
 3. Another possible improvement (alligned with the previous) is that, currently, the spell check is executed only after all tweets are collected, this makes the response time too big. A better approach would be to do the spell check right after each tweet is received (and them emmit an event containing the tweet and the typos count).
 
 4. Increase error handling. Current error handling is not so good. Can be improved
-
-4. 
