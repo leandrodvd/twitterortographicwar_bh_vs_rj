@@ -27,5 +27,5 @@ There are lots of possible improvements to be done. In fact a full refactor is w
 
 7. Implement a website that uses this to a public ortographic battle
 
-8.Rule the world... 
+8. Rule the world... 
 
