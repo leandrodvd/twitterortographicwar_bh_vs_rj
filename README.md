@@ -12,5 +12,12 @@ Using {"time":10} in the body request will process tweets form bh and rj for the
 
 # Room for improvements
 There are lots of possible improvements to be done. In fact a full refactor is welcome.
-1. The biggest one is that, currently, the solution opens a new twitter stream for each new POST request. With this approach, if two simultaneous requests are received, two streams will be opened. This is a not a performatic solution and, depending on the usage, Twitter may block the stream requests. One possible better approach would be to open and keep a single stream when server is initialized, and emit an event for each tweet. Each post request would implement a sort of "collector" object that subscribes to those events t oexecute the count. The collector would exist only for the desired requested time interval.
-2. Another possible improvement (alligned with the previous) is that, currently, the spell check is executed only after all tweets are collected, this makes the response time too big. A better approach would be to do the spell check right after each tweet is received (and them emmit an event containing the tweet and the typos count).
+1. Add some tests. I created some tests for this solutions but it was not in a good format to add to the npm standard. Adding some tests using some node test framwework like Mocha and declaring the test inside the npm package.json would be good.
+
+2. The biggest one is that, currently, the solution opens a new twitter stream for each new POST request. With this approach, if two simultaneous requests are received, two streams will be opened. This is a not a performatic solution and, depending on the usage, Twitter may block the stream requests. One possible better approach would be to open and keep a single stream when server is initialized, and emit an event for each tweet. Each post request would implement a sort of "collector" object that subscribes to those events t oexecute the count. The collector would exist only for the desired requested time interval.
+
+3. Another possible improvement (alligned with the previous) is that, currently, the spell check is executed only after all tweets are collected, this makes the response time too big. A better approach would be to do the spell check right after each tweet is received (and them emmit an event containing the tweet and the typos count).
+
+4. Increase error handling. Current error handling is not so good. Can be improved
+
+4. 
