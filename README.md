@@ -1,0 +1,2 @@
+# twitterortographicwar_bh_vs_rj
+A nodejs app that receives HTTP POST requests containing a "time" atribut in seconds, then collects tweets from Belo Horizonte, MG - Brazil and Rio de Janeiro,RJ - Brazil for the specified amount of time. After the collection, tweets sent to a spell checker in pt-BR. The information about the total of ortgraphic errors for each city is them provided as the POST response.
